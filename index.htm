@@ -1,0 +1,1447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.7">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;LaiqVerse · Repo Explorer&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== ROOT VARIABLES (Orange Theme) ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--orange: #E84A00;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--orange-dim: #a33300;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--orange-glow: rgba(232, 74, 0, 0.12);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-main: #0A0A0A;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-dark: #111111;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-card: #161616;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-near-black: #0d0d0d;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--bg-tag: #1a1a1a;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-white: #FFFFFF;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #888888;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--text-light-muted: #aaaaaa;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--border: #222222;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--border-alt: #1E1E1E;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>--success: #2ECC71;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: system-ui, -apple-system, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 100vh;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 1400px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== HEADER ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>header {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-near-black);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header .brand {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: nowrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header .brand .logo {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header .brand h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: linear-gradient(135deg, var(--orange), var(--orange-dim));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-background-clip: text;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header .brand .tagline {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 300;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>-webkit-text-fill-color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header input {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: border-color 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 0 0 3px var(--orange-glow);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header input::placeholder {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--orange-dim);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-1px);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 20px var(--orange-glow);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>header button:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>opacity: 0.5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: not-allowed;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== LOG ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#log {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-near-black);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 10px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Courier New', monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 150px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>#log .success { color: var(--success); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#log .error { color: var(--orange); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#log .info { color: var(--text-light-muted); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#log .warn { color: #d29922; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>#log .highlight { color: var(--orange); font-weight: bold; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== MAIN LAYOUT ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.main {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 70vh;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-height: 400px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== EXPLORER ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 280px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>min-width: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer::-webkit-scrollbar { width: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer::-webkit-scrollbar-track { background: var(--bg-main); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer::-webkit-scrollbar-thumb { background: var(--orange); border-radius: 4px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer .file-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.15s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer .file-item:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-tag);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer .file-item.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--orange-glow);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 2px solid var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.explorer .folder-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-tree { list-style: none; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-tree li { padding: 1px 0; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== PREVIEW ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== REPO INFO BAR ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-near-black);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-tag);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-alt);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.react { color: #61dafb; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.vue { color: #41b883; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.node { color: #68a063; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.python { color: #ffd43b; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.html { color: #e34f26; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.android { color: #3ddc84; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.kotlin { color: #7f52ff; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.repo-info .badge.orange { color: var(--orange); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== TABS ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-tabs {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-near-black);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-tabs button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-tabs button:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-tag);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-tabs button.active {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 2px 12px var(--orange-glow);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== PREVIEW CONTENT ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content &gt; div,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content &gt; iframe,</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content &gt; pre {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>right: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>bottom: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content .code-view {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Courier New', monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: pre-wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>word-break: break-all;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content iframe {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: white;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content .placeholder {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content .placeholder .big-icon { font-size: 48px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content .placeholder .sub { font-size: 13px; color: var(--text-muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content iframe.active { display: block; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content .code-view.active { display: block; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.preview-content .placeholder.hidden { display: none; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== README ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 24px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview.active { display: block; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview h1, .readme-preview h2, .readme-preview h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 16px 0 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview h1 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 22px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border-alt);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview h3 { font-size: 18px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview code {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 2px 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-alt);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview pre {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-dark);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 8px 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-alt);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview pre code {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light-muted);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview a {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview a:hover { text-decoration: underline; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview ul, .readme-preview ol { padding-left: 24px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview blockquote {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-left: 3px solid var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--orange-glow);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 8px 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.readme-preview img {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== DASHBOARD ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 24px 30px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard.active { display: block; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard h2 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .stats-grid {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 24px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .stat-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: border-color 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .stat-card:hover { border-color: var(--orange-dim); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .stat-card .number {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 28px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 700;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .stat-card .label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .section { margin-bottom: 20px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .section h3 {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .dep-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .dep-tag {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-tag);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border-alt);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: border-color 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .dep-tag:hover { border-color: var(--orange-dim); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .dep-tag .ver {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .file-type-list {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .file-type-item {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 6px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light-muted);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .file-type-item .count {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-tag);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .tree-visual {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Courier New', monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 180px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .tree-visual .folder { color: var(--orange); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .tree-visual .file { color: var(--text-muted); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .info-box {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 14px 18px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.8;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.dashboard .info-box strong { color: var(--text-white); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== FILE PREVIEW CARD ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-direction: column;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>height: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card.active { display: flex; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card .file-icon { font-size: 72px; margin-bottom: 8px; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card .file-name {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card .file-details {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card .file-details span {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card .file-preview-text {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-light-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-width: 600px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>max-height: 200px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>overflow-y: auto;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Courier New', monospace;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>white-space: pre-wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>word-break: break-all;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.5;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.file-preview-card .file-preview-text .label {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 11px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 0.5px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 8px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== LAIQVERSE INFO PANEL ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px 24px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-card);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-top: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-shrink: 0;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel.active { display: flex; }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .left {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .left .logo {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 32px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .left .info .name {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 15px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .left .info .title {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .right {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .right .link-btn {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--orange-glow);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 4px 14px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid var(--orange-dim);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transition: all 0.2s;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>display: inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>gap: 4px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .right .link-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-color: var(--orange);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>transform: translateY(-1px);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>.laique-panel .right .link-btn .badge-num {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>background: var(--bg-main);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 0 6px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-white);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== SCROLLBARS ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar { width: 6px; height: 6px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-track { background: var(--bg-main); }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb { background: var(--orange-dim); border-radius: 4px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>::-webkit-scrollbar-thumb:hover { background: var(--orange); }</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>/* ===== RESPONSIVE ===== */</p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>body { padding: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.main { flex-direction: column; height: auto; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.explorer { width: 100%; max-height: 200px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.preview { height: 450px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.dashboard .stats-grid { grid-template-columns: repeat(2, 1fr); }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header { padding: 10px 14px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header .brand h1 { font-size: 18px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.readme-preview, .dashboard { padding: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.file-preview-card .file-icon { font-size: 48px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.file-preview-card .file-name { font-size: 16px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.laique-panel { flex-direction: column; align-items: flex-start; gap: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 480px) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header input { min-width: 140px; font-size: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>header button { padding: 8px 16px; font-size: 12px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.dashboard .stats-grid { grid-template-columns: 1fr 1fr; gap: 8px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.dashboard .stat-card .number { font-size: 20px; }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>.preview-tabs button { padding: 4px 10px; font-size: 11px; }</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ===== HEADER ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;header&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="brand"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="logo"&gt;⨁&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h1&gt;LaiqVerse&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;span class="tagline"&gt;· Repo Explorer&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;input type="text" id="repoInput" placeholder="Paste GitHub URL (e.g., https://github.com/user/repo)" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;button id="loadBtn"&gt;▶ Load &amp; Visualize&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ===== LOG ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div id="log"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="info"&gt;⨁ LaiqVerse · I direct machines to imagine. · Paste a repo URL above.&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ===== MAIN ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="main"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Explorer --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="explorer" id="explorer"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div style="color:var(--text-muted); padding:20px; text-align:center; font-size:14px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>No repo loaded&lt;br /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span style="font-size:12px; color:var(--text-muted);"&gt;Files will appear here&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Preview --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="preview"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Repo Info Bar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="repo-info" id="repoInfo" style="display:none;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="repoName"&gt;📁 repo-name&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span class="badge" id="projectType"&gt;📦 project&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;span id="fileCount"&gt;📄 0 files&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Tabs --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="preview-tabs"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button class="active" data-tab="dashboard"&gt;📊 Dashboard&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button data-tab="preview"&gt;🌐 Preview&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button data-tab="code"&gt;📄 Code&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;button data-tab="readme"&gt;📖 README&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- Content --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="preview-content" id="previewContent"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="placeholder" id="placeholder"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="big-icon"&gt;⨁&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;Load a repo to see the dashboard&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="sub"&gt;Visual overview of the project&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;!-- File Preview Card --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="file-preview-card" id="filePreviewCard"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="file-icon" id="fileIcon"&gt;📄&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="file-name" id="fileName"&gt;file.txt&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="file-details"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span id="fileType"&gt;📂 Text&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span id="fileSize"&gt;0 bytes&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span id="fileLines"&gt;0 lines&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="file-preview-text" id="filePreviewText"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="label"&gt;📝 Preview&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div id="filePreviewContent"&gt;No content preview available&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;iframe id="previewFrame" sandbox="allow-scripts allow-modals allow-same-origin"&gt;&lt;/iframe&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;pre class="code-view" id="codeView"&gt;&lt;/pre&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="readme-preview" id="readmeView"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="dashboard" id="dashboardView"&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;!-- ===== LAIQVERSE INFO PANEL (ACTIVATED LINKS) ===== --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="laique-panel" id="laiquePanel"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;span class="logo"&gt;⨁&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="info"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="name"&gt;Laiq Ahmed Qureshi&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;div class="title"&gt;I direct machines to imagine. · Karachi&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://laiqqureshi.github.io/LaiqVerse-Prompt-Library/index.html" target="_blank" class="link-btn"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>🎯 &lt;span id="promptCount"&gt;29&lt;/span&gt; Prompts</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://laiqqureshi.github.io/LaiqVerse-Prompt-Library/index.html" target="_blank" class="link-btn"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>📚 &lt;span id="repoCount"&gt;0&lt;/span&gt; Repos Explored</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;a href="https://laiqqureshi.github.io/LaiqVerse-Prompt-Library/index.html" target="_blank" class="link-btn"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>⨁ LaiqVerse</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/a&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ============================================================</p>
+<p class="p1"><span class="Apple-converted-space">        </span>//<span class="Apple-converted-space">  </span>JAVASCRIPT — LaiqVerse Repo Explorer</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ============================================================</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- DOM REFS ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const input = document.getElementById('repoInput');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const loadBtn = document.getElementById('loadBtn');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const log = document.getElementById('log');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const explorer = document.getElementById('explorer');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const previewFrame = document.getElementById('previewFrame');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const codeView = document.getElementById('codeView');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const readmeView = document.getElementById('readmeView');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const dashboardView = document.getElementById('dashboardView');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const placeholder = document.getElementById('placeholder');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const filePreviewCard = document.getElementById('filePreviewCard');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fileIcon = document.getElementById('fileIcon');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fileName = document.getElementById('fileName');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fileType = document.getElementById('fileType');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fileSize = document.getElementById('fileSize');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fileLines = document.getElementById('fileLines');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const filePreviewContent = document.getElementById('filePreviewContent');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const repoInfo = document.getElementById('repoInfo');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const repoName = document.getElementById('repoName');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const projectType = document.getElementById('projectType');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const fileCount = document.getElementById('fileCount');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const laiquePanel = document.getElementById('laiquePanel');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const promptCount = document.getElementById('promptCount');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const repoCount = document.getElementById('repoCount');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentFiles = {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentFilePath = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentRepoName = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let currentProjectInfo = {};</p>
+<p class="p1"><span class="Apple-converted-space">        </span>let repoExploredCount = 0;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- LOGGING ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function logMsg(msg, type = 'info') {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const div = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.className = type;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>div.textContent = msg;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>log.appendChild(div);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>log.scrollTop = log.scrollHeight;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log(msg);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- SWITCH TAB ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function switchTab(tabId) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log(`🔄 Switching to tab: ${tabId}`);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>tabButtons.forEach(b =&gt; b.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const targetTab = document.querySelector(`[data-tab="${tabId}"]`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (targetTab) targetTab.classList.add('active');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>dashboardView.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>readmeView.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>previewFrame.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>codeView.classList.remove('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>placeholder.classList.add('hidden');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filePreviewCard.classList.remove('active');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (tabId === 'dashboard') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>dashboardView.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (tabId === 'preview') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const currentFile = currentFiles[currentFilePath];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (currentFile &amp;&amp; currentFilePath &amp;&amp; !currentFilePath.match(/\.(html|htm)$/i)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>filePreviewCard.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>previewFrame.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (tabId === 'code') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>codeView.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else if (tabId === 'readme') {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readmeView.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- EXTRACT REPO INFO ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function extractRepoInfo(url) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const u = new URL(url);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const parts = u.pathname.split('/').filter(Boolean);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (parts.length &gt;= 2) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return { owner: parts[0], repo: parts[1] };</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (_) {}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return null;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- DETECT PROJECT TYPE ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function detectProjectType(files) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const fileList = Object.keys(files);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (fileList.some(f =&gt; f.endsWith('.kt') || f.endsWith('.kts'))) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (fileList.some(f =&gt; f.includes('build.gradle'))) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return { type: 'Android/Kotlin', badge: 'android', emoji: '📱' };</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return { type: 'Kotlin', badge: 'kotlin', emoji: '🔷' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (fileList.some(f =&gt; f === 'package.json')) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const pkg = JSON.parse(files['package.json'] || '{}');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const deps = { ...pkg.dependencies, ...pkg.devDependencies };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (deps.react || deps['react-dom']) return { type: 'React', badge: 'react', emoji: '⚛️' };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (deps.vue) return { type: 'Vue', badge: 'vue', emoji: '🟩' };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (deps.next) return { type: 'Next.js', badge: 'react', emoji: '▲' };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (deps.express || deps.fastify) return { type: 'Node.js', badge: 'node', emoji: '🟢' };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return { type: 'Node.js', badge: 'node', emoji: '📦' };</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch (e) { /* ignore */ }</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (fileList.some(f =&gt; f.endsWith('.py'))) return { type: 'Python', badge: 'python', emoji: '🐍' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (fileList.some(f =&gt; f.endsWith('.html'))) return { type: 'HTML', badge: 'html', emoji: '🌐' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (fileList.some(f =&gt; f.endsWith('.go'))) return { type: 'Go', badge: 'html', emoji: '🐹' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (fileList.some(f =&gt; f.endsWith('.rs'))) return { type: 'Rust', badge: 'html', emoji: '🦀' };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (fileList.some(f =&gt; f.endsWith('.java'))) return { type: 'Java', badge: 'html', emoji: '☕' };</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return { type: 'Code', badge: 'orange', emoji: '📁' };</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- PARSE DEPENDENCIES ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function parseDependencies(files) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const deps = [];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (files['package.json']) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const pkg = JSON.parse(files['package.json']);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const allDeps = { ...pkg.dependencies, ...pkg.devDependencies };</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>for (const [name, ver] of Object.entries(allDeps).slice(0, 20)) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>deps.push({ name, version: ver, source: 'npm' });</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch (e) {}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const gradleFile = Object.keys(files).find(f =&gt; f.includes('build.gradle'));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (gradleFile &amp;&amp; files[gradleFile]) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const content = files[gradleFile];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const implMatches = content.match(/implementation\s+['"]([^'"]+)['"]/g) || [];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (const match of implMatches.slice(0, 15)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const dep = match.replace(/implementation\s+['"]/, '').replace(/['"]/, '');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>deps.push({ name: dep, version: '', source: 'gradle' });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (files['requirements.txt']) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const lines = files['requirements.txt'].split('\n').filter(l =&gt; l.trim() &amp;&amp; !l.startsWith('#'));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (const line of lines.slice(0, 15)) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const parts = line.split('==');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>deps.push({ name: parts[0], version: parts[1] || '', source: 'pip' });</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>return deps;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- BUILD DASHBOARD ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function buildDashboard(files, projectInfo) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const fileList = Object.keys(files);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const typeStats = {};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (const path of fileList) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const ext = path.split('.').pop().toLowerCase() || 'none';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>typeStats[ext] = (typeStats[ext] || 0) + 1;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sortedTypes = Object.entries(typeStats).sort((a, b) =&gt; b[1] - a[1]).slice(0, 15);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const deps = parseDependencies(files);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const topLevel = new Set();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (const path of fileList) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const parts = path.split('/');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (parts.length &gt; 1) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>topLevel.add(parts[0]);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>let html = `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;h2&gt;📊 Project Dashboard&lt;/h2&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="stats-grid"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stat-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="number"&gt;${fileList.length}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="label"&gt;📄 Total Files&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stat-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="number"&gt;${Object.keys(typeStats).length}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="label"&gt;📂 File Types&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stat-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="number"&gt;${deps.length}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="label"&gt;📦 Dependencies&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="stat-card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="number"&gt;${topLevel.size}&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="label"&gt;📁 Top-Level Folders&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;📂 File Types&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="file-type-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${sortedTypes.map(([ext, count]) =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;span class="file-type-item"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>.${ext} &lt;span class="count"&gt;${count}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (deps.length &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;📦 Dependencies&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="dep-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${deps.map(d =&gt; `</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="dep-tag"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>${d.name} ${d.version ? `&lt;span class="ver"&gt;${d.version}&lt;/span&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>`).join('')}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (topLevel.size &gt; 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;h3&gt;📁 Project Structure&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div class="tree-visual"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${Array.from(topLevel).sort().map(f =&gt; `&lt;span class="folder"&gt;📁 ${f}/&lt;/span&gt;`).join('&lt;br /&gt;')}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${fileList.filter(f =&gt; !f.includes('/')).slice(0, 10).map(f =&gt; `&lt;span class="file"&gt;📄 ${f}&lt;/span&gt;`).join('&lt;br /&gt;')}</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>${fileList.filter(f =&gt; !f.includes('/')).length &gt; 10 ? `&lt;span class="file"&gt;... and ${fileList.filter(f =&gt; !f.includes('/')).length - 10} more&lt;/span&gt;` : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="section"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h3&gt;ℹ️ Project Info&lt;/h3&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;div class="info-box"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;🏷️ Type: &lt;strong&gt;${projectInfo.type}&lt;/strong&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;📂 Repo: &lt;strong&gt;${currentRepoName}&lt;/strong&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>&lt;div&gt;📄 Files: &lt;strong&gt;${fileList.length}&lt;/strong&gt;&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${files['README.md'] ? '&lt;div&gt;📖 Has README: &lt;span style="color:var(--success);"&gt;✅&lt;/span&gt;&lt;/div&gt;' : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>${files['LICENSE'] ? '&lt;div&gt;📜 Has License: &lt;span style="color:var(--success);"&gt;✅&lt;/span&gt;&lt;/div&gt;' : ''}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>`;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>dashboardView.innerHTML = html;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- FETCH REPO ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function fetchRepo(owner, repo) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>logMsg(`📡 Fetching ${owner}/${repo}...`, 'info');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const repoRes = await fetch(`https://api.github.com/repos/${owner}/${repo}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!repoRes.ok) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>throw new Error(`HTTP ${repoRes.status}: ${repoRes.statusText}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const repoData = await repoRes.json();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const branch = repoData.default_branch || 'main';</p>
+<p class="p1"><span class="Apple-converted-space">            </span>logMsg(`📌 Default branch: ${branch}`, 'info');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const treeRes = await fetch(</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`https://api.github.com/repos/${owner}/${repo}/git/trees/${branch}?recursive=1`</p>
+<p class="p1"><span class="Apple-converted-space">            </span>);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!treeRes.ok) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>throw new Error(`Tree fetch failed: ${treeRes.status}`);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const treeData = await treeRes.json();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const filePaths = treeData.tree</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.filter(item =&gt; item.type === 'blob')</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.map(item =&gt; item.path)</p>
+<p class="p1"><span class="Apple-converted-space">                </span>.filter(path =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const skip = ['.png', '.jpg', '.jpeg', '.gif', '.ico', '.svg', '.pdf', '.zip', '.tar', '.gz', '.mp4',</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>'.mp3', '.wav', '.webp', '.apk', '.aab'</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const ext = path.substring(path.lastIndexOf('.')).toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (skip.includes(ext)) return false;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (path.includes('node_modules/') || path.includes('/dist/') ||</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>path.includes('/build/') || path.includes('.git/')) return false;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return true;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>logMsg(`📁 Found ${filePaths.length} files (fetching first 50)`, 'info');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const MAX_FILES = 50;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const filesToFetch = filePaths.slice(0, MAX_FILES);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const fileContents = {};</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (const path of filesToFetch) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const rawRes = await fetch(</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`https://raw.githubusercontent.com/${owner}/${repo}/${branch}/${path}`</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (rawRes.ok) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>fileContents[path] = await rawRes.text();</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch (e) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>// Skip files that fail</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>await new Promise(r =&gt; setTimeout(r, 30));</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>logMsg(`✅ Loaded ${Object.keys(fileContents).length} files`, 'success');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return fileContents;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- RENDER FILE TREE ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderTree(files) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const paths = Object.keys(files);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (paths.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>explorer.innerHTML =</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>`&lt;div style="color:var(--text-muted); padding:20px; text-align:center;"&gt;No files found&lt;/div&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const root = { children: {} };</p>
+<p class="p1"><span class="Apple-converted-space">            </span>for (const path of paths.sort()) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const parts = path.split('/');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>let current = root;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (let i = 0; i &lt; parts.length; i++) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const part = parts[i];</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (!current.children[part]) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>current.children[part] = {</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>name: part,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>isFile: i === parts.length - 1,</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>children: {},</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>fullPath: path</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>};</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>current = current.children[part];</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>function renderNode(node, indent = 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const entries = Object.values(node.children).sort((a, b) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (a.isFile !== b.isFile) return a.isFile ? 1 : -1;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return a.name.localeCompare(b.name);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>let html = '';</p>
+<p class="p1"><span class="Apple-converted-space">                </span>for (const child of entries) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>if (child.isFile) {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>const icon = getFileIcon(child.name);</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li style="padding-left:${indent + 20}px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="file-item" data-path="${child.fullPath}"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                    </span>${icon} ${child.name}</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>html += `</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;li style="padding-left:${indent + 8}px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;span class="folder-item"&gt;📁 ${child.name}&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                                </span>&lt;ul class="file-tree"&gt;${renderNode(child, indent + 20)}&lt;/ul&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                            </span>&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">                        </span>`;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return html;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>explorer.innerHTML = `&lt;ul class="file-tree"&gt;${renderNode(root)}&lt;/ul&gt;`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log(`✅ Rendered ${paths.length} files in explorer`);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function getFileIcon(name) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ext = name.split('.').pop().toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const icons = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>html: '🌐', htm: '🌐', css: '🎨', js: '🟨', ts: '🔵',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>jsx: '⚛️', tsx: '⚛️', vue: '🟩', json: '📋', md: '📝',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>py: '🐍', rb: '💎', go: '🐹', rs: '🦀', java: '☕',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>kt: '🔷', kts: '🔷', c: '⚙️', cpp: '⚙️', sh: '💻',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>yml: '📄', yaml: '📄', toml: '📄', lock: '🔒',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gitignore: '🙈', txt: '📄', xml: '📄', svg: '🖼️',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>gradle: '📦', properties: '⚙️'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return icons[ext] || '📄';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>function getFileTypeName(path) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const ext = path.split('.').pop().toLowerCase();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const types = {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>html: 'HTML', htm: 'HTML', css: 'CSS', js: 'JavaScript',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>ts: 'TypeScript', jsx: 'React JSX', tsx: 'React TSX',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>vue: 'Vue.js', json: 'JSON', md: 'Markdown', py: 'Python',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>rb: 'Ruby', go: 'Go', rs: 'Rust', java: 'Java',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>kt: 'Kotlin', kts: 'Kotlin Script', c: 'C', cpp: 'C++',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>sh: 'Shell', yml: 'YAML', yaml: 'YAML', toml: 'TOML',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>lock: 'Lock File', gitignore: 'Git Ignore', txt: 'Text',</p>
+<p class="p1"><span class="Apple-converted-space">                </span>xml: 'XML', svg: 'SVG', gradle: 'Gradle', properties: 'Properties'</p>
+<p class="p1"><span class="Apple-converted-space">            </span>};</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return types[ext] || 'Code File';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- RENDER README ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function renderReadme(content) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>let html = content;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/^# (.*$)/gim, '&lt;h1&gt;$1&lt;/h1&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/^## (.*$)/gim, '&lt;h2&gt;$1&lt;/h2&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/^### (.*$)/gim, '&lt;h3&gt;$1&lt;/h3&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/```([\s\S]*?)```/g, '&lt;pre&gt;&lt;code&gt;$1&lt;/code&gt;&lt;/pre&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/`([^`]+)`/g, '&lt;code&gt;$1&lt;/code&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '&lt;a href="$2" target="_blank"&gt;$1&lt;/a&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/^- (.*$)/gim, '&lt;li&gt;$1&lt;/li&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/^(\d+)\. (.*$)/gim, '&lt;li&gt;$2&lt;/li&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/\*\*([^*]+)\*\*/g, '&lt;strong&gt;$1&lt;/strong&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/\*([^*]+)\*/g, '&lt;em&gt;$1&lt;/em&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/^&gt; (.*$)/gim, '&lt;blockquote&gt;$1&lt;/blockquote&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>html = html.replace(/\n/g, '&lt;br /&gt;');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>return html;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- SHOW FILE ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>function showFile(path, content) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log(`📂 showFile() called with: ${path} (${content ? content.length : 0} chars)`);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!content) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error(`❌ No content for: ${path}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg(`❌ No content for: ${path}`, 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentFilePath = path;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>logMsg(`📖 Opening: ${path} (${content.length} chars)`, 'info');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>placeholder.classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isReadme = path.toLowerCase().includes('readme');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const isHtml = path.match(/\.(html|htm)$/i);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const icon = getFileIcon(path);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const typeName = getFileTypeName(path);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const lines = content.split('\n').length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const size = content.length;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const sizeDisplay = size &lt; 1024 ? `${size} B` : size &lt; 1048576 ? `${(size / 1024).toFixed(1)} KB` :</p>
+<p class="p1"><span class="Apple-converted-space">                </span>`${(size / 1048576).toFixed(1)} MB`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const preview = content.length &gt; 500 ? content.substring(0, 500) + '\n... (truncated)' : content;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>fileIcon.textContent = icon;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fileName.textContent = path.split('/').pop();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fileType.textContent = `📂 ${typeName}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fileSize.textContent = `📦 ${sizeDisplay}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>fileLines.textContent = `📝 ${lines} lines`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filePreviewContent.textContent = preview;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isReadme) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>readmeView.innerHTML = renderReadme(content);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>switchTab('readme');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg(`📖 Displaying README`, 'success');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (isHtml) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const blob = new Blob([content], { type: 'text/html' });</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>const url = URL.createObjectURL(blob);</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>previewFrame.src = url;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>switchTab('preview');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>logMsg(`✅ Rendered ${path} in preview`, 'success');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>setTimeout(() =&gt; URL.revokeObjectURL(url), 1000);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} catch (e) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>logMsg(`❌ Failed to render: ${e.message}`, 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>codeView.textContent = `// ${path}\n\n${content}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>switchTab('code');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>filePreviewCard.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>logMsg(`📄 Showing code for ${path} (also showing preview card)`, 'info');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- EVENT DELEGATION FOR EXPLORER ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>explorer.addEventListener('click', function(e) {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const fileItem = e.target.closest('.file-item');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!fileItem) return;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const path = fileItem.dataset.path;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>console.log(`🖱️ Clicked file via delegation: ${path}`);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (path &amp;&amp; currentFiles[path]) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>explorer.querySelectorAll('.file-item').forEach(f =&gt; f.classList.remove('active'));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fileItem.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>showFile(path, currentFiles[path]);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error(`❌ File not found: ${path}`);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg(`❌ File not found: ${path}`, 'error');</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- TAB SWITCHING ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const tabButtons = document.querySelectorAll('.preview-tabs button');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tabButtons.forEach(btn =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>btn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const tab = btn.dataset.tab;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>switchTab(tab);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- MAIN LOAD ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>async function loadRepo() {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>const url = input.value.trim();</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!url) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg('❌ Please paste a GitHub URL', 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>const info = extractRepoInfo(url);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (!info) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg('❌ Invalid URL. Use format: https://github.com/owner/repo', 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadBtn.disabled = true;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>currentRepoName = `${info.owner}/${info.repo}`;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>logMsg(`🔍 Processing: ${currentRepoName}`, 'info');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>const files = await fetchRepo(info.owner, info.repo);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentFiles = files;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.log(`📦 Loaded files:`, Object.keys(files));</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (Object.keys(files).length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>logMsg('❌ No readable files found', 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>loadBtn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>return;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Update repo count</p>
+<p class="p1"><span class="Apple-converted-space">                </span>repoExploredCount++;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>repoCount.textContent = repoExploredCount;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const projectInfo = detectProjectType(files);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>currentProjectInfo = projectInfo;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>repoName.textContent = `📁 ${currentRepoName}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>projectType.textContent = `${projectInfo.emoji} ${projectInfo.type}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>projectType.className = `badge ${projectInfo.badge}`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>fileCount.textContent = `📄 ${Object.keys(files).length} files`;</p>
+<p class="p1"><span class="Apple-converted-space">                </span>repoInfo.style.display = 'flex';</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>// Show LaiqVerse panel</p>
+<p class="p1"><span class="Apple-converted-space">                </span>laiquePanel.classList.add('active');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>renderTree(files);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>buildDashboard(files, projectInfo);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>switchTab('dashboard');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>placeholder.classList.add('hidden');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg(`✅ Loaded ${Object.keys(files).length} files successfully!`, 'success');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg(`📊 Project type: ${projectInfo.type}`, 'highlight');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">                </span>const readmeFile = Object.keys(files).find(f =&gt; f.toLowerCase().includes('readme'));</p>
+<p class="p1"><span class="Apple-converted-space">                </span>if (readmeFile) {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>logMsg(`📖 Found ${readmeFile} — auto-loading...`, 'info');</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>showFile(readmeFile, files[readmeFile]);</p>
+<p class="p1"><span class="Apple-converted-space">                </span>} else {</p>
+<p class="p1"><span class="Apple-converted-space">                    </span>logMsg(`💡 Click any file in the explorer to view it`, 'info');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>} catch (error) {</p>
+<p class="p1"><span class="Apple-converted-space">                </span>logMsg(`❌ Error: ${error.message}`, 'error');</p>
+<p class="p1"><span class="Apple-converted-space">                </span>console.error(error);</p>
+<p class="p1"><span class="Apple-converted-space">            </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">            </span>loadBtn.disabled = false;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- EVENT LISTENERS ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>loadBtn.addEventListener('click', loadRepo);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.addEventListener('keydown', (e) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>if (e.key === 'Enter') loadRepo();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">        </span>// ---- STARTUP ----</p>
+<p class="p1"><span class="Apple-converted-space">        </span>logMsg('⨁ LaiqVerse Repo Explorer loaded.', 'success');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>logMsg('💡 "I direct machines to imagine." — Laiq Ahmed Qureshi', 'highlight');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>logMsg('📌 Paste any public GitHub repo URL and click Load', 'info');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.placeholder = 'https://github.com/recloudstream/cloudstream';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>laiquePanel.classList.add('active');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>promptCount.textContent = '29';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>repoCount.textContent = '0';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
