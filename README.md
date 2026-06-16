@@ -2,6 +2,10 @@
 
 **I direct machines to imagine.**
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-https://laiqqureshi.github.io/LaiqVerse-Repo-Explorer/-orange)](https://laiqqureshi.github.io/LaiqVerse-Repo-Explorer/)
+[![GitHub stars](https://img.shields.io/github/stars/LaiqQureshi/LaiqVerse-Repo-Explorer)](https://github.com/LaiqQureshi/LaiqVerse-Repo-Explorer/stargazers)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue)](https://github.com/LaiqQureshi/LaiqVerse-Repo-Explorer/blob/main/LICENSE)
+
 A dynamic GitHub repository visualizer with a premium dark theme. Paste any public repository URL and explore it visually — no installation, no server, just your browser.
 
 ---
