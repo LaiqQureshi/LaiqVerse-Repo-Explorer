@@ -4,6 +4,8 @@
 
 [![Live Demo](https://img.shields.io/badge/Live_Demo-✅_Click_Here-orange)](https://laiqqureshi.github.io/LaiqVerse-Repo-Explorer/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Repo-blue)](https://github.com/LaiqQureshi/LaiqVerse-Repo-Explorer)
+[![Prompt Library](https://img.shields.io/badge/Prompt_Library-📚-brightgreen)](https://laiqqureshi.github.io/LaiqVerse-Prompt-Library/index.html)
+[![LaiqVerse Blog](https://img.shields.io/badge/LaiqVerse_Blog-📝-yellow)](https://laiqverse11.wordpress.com/)
 [![Made with ❤️](https://img.shields.io/badge/Made_with-❤️-red)](https://github.com/LaiqQureshi)
 
 A dynamic GitHub repository visualizer with a premium dark theme. Paste any public repository URL and explore it visually — no installation, no server, just your browser.
@@ -53,8 +55,10 @@ A dynamic GitHub repository visualizer with a premium dark theme. Paste any publ
 
 LaiqVerse is a creative and technical brand by **Laiq Ahmed Qureshi** — exploring the intersection of AI, art, and code.
 
-- **Prompt Library:** [laiqqureshi.github.io/LaiqVerse-Prompt-Library/](https://laiqqureshi.github.io/LaiqVerse-Prompt-Library/)
-- **Explore 29+ AI prompts** — cinematic, editorial, dark luxury
+| Resource | Link |
+|----------|------|
+| 🎨 **Prompt Library** | [laiqqureshi.github.io/LaiqVerse-Prompt-Library/](https://laiqqureshi.github.io/LaiqVerse-Prompt-Library/index.html) |
+| 📝 **LaiqVerse Blog** | [laiqverse11.wordpress.com](https://laiqverse11.wordpress.com/) |
 
 ---
 
